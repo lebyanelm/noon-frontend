@@ -1,13 +1,51 @@
+@import "./variables.scss";
+
+* {
+  font-size: $FONT_SIZE;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: $FONT_FAMILY;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0 $PAGE_MARGINS;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: $SUB_HEADER_FONT_FAMILY;
+  font-size: $SUBHEADER_FONT_SIZE;
+}
+
+// ANCHOR TAGS
+a {
+  text-decoration: none;
+  color: $THEME_COLOR;
+  font-weight: 500;
+}
+
+// BUTTONS
+button,
+.button {
+  display: inline-block;
+  padding: 8px 20px !important;
+  background: $DARK_COLOR;
+  color: $THEME_COLOR;
+  font-size: small;
+  font-weight: bold;
+  border-radius: $BORDER_RADIUS;
+  transition: opacity 300ms ease-in-out;
+  font-family: $SUB_HEADER_FONT_FAMILY;
+}
+
+a,
+button,
+.button {
+  opacity: 0.8;
+}
+
+a:hover,
+button:hover,
+.button:hover {
+  opacity: 1;
 }
