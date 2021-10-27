@@ -1,15 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './Wrapper.module.scss';
+import React from "react";
+import styles from "./Wrapper.module.scss";
 
-const Wrapper = () => (
-  <div className={styles.Wrapper}>
-    Wrapper Component
-  </div>
-);
-
-Wrapper.propTypes = {};
-
-Wrapper.defaultProps = {};
+const Wrapper = () => <div className={styles.Wrapper}>Wrapper Component</div>;
 
 export default Wrapper;
