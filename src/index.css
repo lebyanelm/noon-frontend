@@ -90,7 +90,8 @@ p {
   font-family: "Noto Sans Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: small;
   font-weight: bold;
-  transform: translateX(5px); }
+  transform: translateX(5px);
+  letter-spacing: 2px; }
 
 .theme-color {
   color: #f1b104; }
