@@ -25,6 +25,12 @@ a {
 }
 
 // BUTTONS
+.buttons {
+  display: flex;
+  margin-top: $PADDING;
+  gap: $PADDING;
+}
+
 button,
 .button {
   display: inline-block;
@@ -32,10 +38,12 @@ button,
   background: $DARK_COLOR;
   color: $THEME_COLOR;
   font-size: small;
-  font-weight: bold;
+  font-weight: bold !important;
   border-radius: $BORDER_RADIUS;
   transition: opacity 300ms ease-in-out;
   font-family: $SUB_HEADER_FONT_FAMILY;
+  border: $BORDER;
+  cursor: pointer;
 }
 
 a,
@@ -44,8 +52,74 @@ button,
   opacity: 0.8;
 }
 
+button.bordered,
+.button.bordered {
+  background: transparent;
+  border: $BORDER;
+  color: $DARK_COLOR;
+}
+
 a:hover,
 button:hover,
 .button:hover {
   opacity: 1;
+}
+
+// SECTIONS
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 50px 0;
+}
+
+section.column {
+  flex-direction: column;
+  text-align: center;
+}
+
+section div {
+  flex: 1;
+}
+
+section div.image {
+  flex: 4 !important;
+}
+
+section div > img {
+  width: 100%;
+}
+
+// TEXTS & TYPOGRAPHY
+p {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.header,
+.subheader {
+  display: block;
+  margin: 0;
+  line-height: 1em;
+}
+
+.header {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.subheader {
+  font-family: $SUB_HEADER_FONT_FAMILY;
+  font-size: small;
+  font-weight: bold;
+  transform: translateX(5px);
+}
+
+.theme-color {
+  color: $THEME_COLOR;
+}
+
+.underline {
+  border-bottom: $BORDER;
 }

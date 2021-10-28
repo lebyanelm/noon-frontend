@@ -5,15 +5,17 @@ const Header = () => (
   <div className={styles.Header}>
     <nav className={styles.HeaderContainer}>
       <div className={styles.LogoBrand}>
-        <b>Noon</b>Weather
+        <img src="/logo192.png" alt="Logo" />
+        <span>
+          <b>Noon</b>weather
+        </span>
       </div>
 
       <ul>
-        <a href="">Discover</a>
-        <a href="">My Forecast</a>
+        <a href="">Discover Forecast</a>
         <a href="">Open-Source Lisence</a>
         <a href="" className="button">
-          Subscribe to Updates
+          View Figma Designs
         </a>
       </ul>
     </nav>

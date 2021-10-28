@@ -1,0 +1,28 @@
+@import "../../variables.scss";
+
+.RatingTextSpace {
+  padding: $PADDING;
+  background: $DARK_COLOR;
+  color: $LIGHER_COLOR;
+  font-size: small;
+  text-align: center;
+}
+
+// INTERGRATION LOGOS
+.ThirdpartyIntegrations {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $PADDING;
+  margin: 60px 0;
+}
+
+.ThirdpartyIntegrations img {
+  transform: scale(0.6);
+  filter: grayscale(1);
+  transition: filter 300ms ease-in-out;
+}
+
+.ThirdpartyIntegrations img:hover {
+  filter: grayscale(0);
+}

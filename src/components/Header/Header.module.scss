@@ -5,7 +5,26 @@
   padding: $PADDING 0;
   align-items: center;
   justify-content: space-between;
-  border-bottom: $BORDER_THIN;
+  border-bottom: $BORDER;
+}
+
+// LOGO IMAGE
+.HeaderContainer .LogoBrand {
+  display: flex;
+  align-items: center;
+  gap: $PADDING;
+}
+.HeaderContainer .LogoBrand img {
+  display: inline-block;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.HeaderContainer .LogoBrand span,
+.HeaderContainer .LogoBrand span * {
+  display: inline-block;
+  font-family: $SUB_HEADER_FONT_FAMILY;
+  font-size: 25px;
 }
 
 // HEADER NAV CONTAINER
@@ -18,4 +37,5 @@
 .HeaderContainer ul a {
   display: inline-block;
   padding: 10px;
+  font-weight: 500;
 }

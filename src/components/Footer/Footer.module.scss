@@ -1,0 +1,47 @@
+@import "../../variables.scss";
+
+.Footer {
+  background: $DARK_COLOR;
+  padding: $PADDING;
+  margin-top: 100px;
+}
+
+.Footer .FooterTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer p {
+  color: $LIGHT_COLOR;
+  font-size: small;
+  text-align: center;
+}
+
+.Footer .FooterTop img {
+  height: 60px;
+  //   border: $LIGHT_COLOR 2px solid;
+}
+
+.Footer .FooterTop input {
+  padding: 8px 0;
+  text-indent: $PADDING;
+  border: none;
+  outline: none;
+}
+
+.Footer .FooterTop button {
+  background: transparentize($THEME_COLOR, 0.5);
+  color: $LIGHT_COLOR;
+  border-radius: 0;
+}
+
+.Footer .FooterBottom {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.Footer .FooterBottom a {
+  display: inine-block;
+  padding: $PADDING;
+}
