@@ -1,0 +1,21 @@
+@import "../../variables.scss";
+
+// INPUT CONTAINER
+.InputContainer input,
+.InputContainer button {
+  font-size: $HEADER_FONT_SIZE;
+  font-weight: 400;
+  outline: none;
+  border: $BORDER !important;
+  font-family: $FONT_FAMILY;
+}
+
+.InputContainer input {
+  text-indent: $PADDING;
+  text-transform: capitalize;
+}
+
+.InputContainer button {
+  padding: 1px $PADDING !important;
+  border-radius: 0;
+}

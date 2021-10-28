@@ -30,8 +30,12 @@ const Landing = () => (
           </p>
 
           <div className="buttons">
-            <a className="button">Discover Forecast</a>
-            <a className="button bordered">Subscribe to Forecast</a>
+            <a className="button" href="/forecast?intent=search">
+              Discover Forecast
+            </a>
+            <a className="button bordered" href="/forecast?intent=subscribe">
+              Subscribe to Forecast
+            </a>
           </div>
         </div>
         <div>

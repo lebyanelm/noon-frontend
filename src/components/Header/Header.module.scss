@@ -25,6 +25,7 @@
   display: inline-block;
   font-family: $SUB_HEADER_FONT_FAMILY;
   font-size: 25px;
+  color: $DARK_COLOR;
 }
 
 // HEADER NAV CONTAINER
@@ -37,5 +38,5 @@
 .HeaderContainer ul a {
   display: inline-block;
   padding: 10px;
-  font-weight: 500;
+  font-weight: 600;
 }
