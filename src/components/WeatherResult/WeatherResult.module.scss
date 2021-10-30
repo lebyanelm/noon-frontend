@@ -1,0 +1,83 @@
+@import "../../variables.scss";
+
+// WEATHER RESULT CONTAINER
+.WeatherResultContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+// WEATHER RESULT CONTENTS
+.WeatherResultContainer .ResultContents {
+  display: flex;
+  align-items: center;
+  gap: $PADDING;
+  padding: 50px 0;
+  width: 100%;
+  margin-top: $PADDING;
+  border-radius: 10px;
+}
+
+.WeatherResultContainer .Temperature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  background: $LIGHT_COLOR;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.WeatherResultContainer .Temperature img {
+  height: 70px;
+  margin-right: $PADDING;
+}
+
+.WeatherResultContainer .Temperature .PanelTitle {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.WeatherResultContainer .Temperature .PanelTemperature {
+  font-weight: normal !important;
+  font-size: $HEADER_FONT_SIZE;
+}
+
+.WeatherResultContainer .Temperature .PanelValue {
+  display: flex;
+}
+
+.WeatherResultContainer .ConditionText {
+  font-family: $SUB_HEADER_FONT_FAMILY;
+  font-weight: bold;
+}
+
+.WeatherResultContainer .More {
+  width: 100%;
+}
+
+.WeatherResultContainer .MiniPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 $PADDING 0;
+  background: $DARK_COLOR;
+  color: $LIGHT_COLOR;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.WeatherResultContainer .MiniPanel .PanelName {
+  font-size: large;
+  font-family: $SUB_HEADER_FONT_FAMILY;
+  padding-left: $PADDING;
+}
+
+.WeatherResultContainer .MiniPanel .PanelValue {
+  margin-right: $PADDING;
+  font-size: $HEADER_FONT_SIZE;
+  color: $THEME_COLOR;
+  font-weight: 900;
+}
