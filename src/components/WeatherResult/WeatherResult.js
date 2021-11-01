@@ -24,7 +24,7 @@ const WeatherResult = ({ areaName }) => (
             <div>
               <div className="header">
                 <span className={styles.PanelTemperature}>21.64</span>{" "}
-                <span class="header theme-color">Fahrenheight</span>
+                <span class="header theme-color">Celcius</span>
               </div>
               <span className={styles.ConditionText}>Partly Cloudy</span>
             </div>
