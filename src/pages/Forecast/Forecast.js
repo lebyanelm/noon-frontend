@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Forecast.module.scss";
+import * as superagent from "superagent";
 
 // COMPONENTS
 import Header from "../../components/Header/Header.lazy";
@@ -9,6 +10,44 @@ import WeatherResult from "../../components/WeatherResult/WeatherResult.lazy";
 
 const Forecast = () => {
   let [areaName, setAreaName] = React.useState("");
+  let [suggestions, setSuggestions] = React.useState([]);
+  let [isShowSuggestions, setShowSuggestions] = React.useState(false);
+  let [selectedSuggestion, setSelectedSuggestion] = React.useState(null);
+
+  const selectSuggestion = (suggestion) => {
+    setAreaName(suggestion.name);
+    setShowSuggestions(false);
+    setSelectedSuggestion(suggestion);
+    console.log(selectedSuggestion)
+  }
+
+  // When user types an area name give out suggestions of related places
+  React.useEffect(() => {
+    if (selectedSuggestion === null) {
+      superagent
+      .get(
+        [
+          process.env.REACT_APP_API_ENDPOINT,
+          "suggestions?query=",
+          areaName.toLowerCase(),
+        ].join("")
+      )
+      .end((_, response) => {
+        if (response) {
+          if (response.statusCode === 200) {
+            setSuggestions(response.body.data);
+            setShowSuggestions(true);
+          } else {
+            console.log(response.body.reason);
+            setShowSuggestions(false);
+          }
+        } else {
+          setShowSuggestions(false);
+          console.log("No internet connection.");
+        }
+      });
+    }
+  }, [areaName]);
 
   return (
     <React.Fragment>
@@ -20,9 +59,25 @@ const Forecast = () => {
             <input
               type="text"
               placeholder="Enter a city name"
-              onKeyUp={(e) => setAreaName(e.target.value)}
+              value={areaName}
+              onChange={(e) => {
+                setAreaName(e.target.value);
+                setSelectedSuggestion(null);
+              }}
             />
             <button>Find Forecast</button>
+
+            {
+              isShowSuggestions && (
+              <div className={styles.InputSuggestions}>
+                {suggestions.map((suggestion) => (
+                  <div className={styles.InputSuggestion} onClick={() => selectSuggestion(suggestion)}>
+                    <span>{suggestion.name}</span>
+                  </div>
+                ))}
+              </div>
+              )
+            }
           </div>
         </div>
       </section>

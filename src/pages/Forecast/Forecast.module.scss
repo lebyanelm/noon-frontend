@@ -1,6 +1,10 @@
 @import "../../variables.scss";
 
 // INPUT CONTAINER
+.InputContainer {
+  position: relative;
+}
+
 .InputContainer input,
 .InputContainer button {
   font-size: $HEADER_FONT_SIZE;
@@ -18,4 +22,33 @@
 .InputContainer button {
   padding: 1px $PADDING !important;
   border-radius: 0;
+}
+
+// AUTOCOMPLETE SUGGESTIONS
+.InputSuggestions {
+  display: flex;
+  width: calc(100% - 8px);
+  max-height: 300px;
+  overflow-y: scroll;
+  flex-direction: column;
+  border: $BORDER;
+  border-top: none !important;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 10000000;
+  background: $LIGHT_COLOR;
+}
+
+.InputSuggestions .InputSuggestion {
+  display: block;
+  padding: 10px;
+  border-top: 1px solid #EEE;
+  transition: color 300ms ease-in-out,
+              background 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.InputSuggestions .InputSuggestion:hover {
+  color: $THEME_COLOR;
+  background: $LIGHER_COLOR;
 }
