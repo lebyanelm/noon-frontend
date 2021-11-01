@@ -16,7 +16,7 @@ const WeatherResult = ({ areaName }) => (
 
       <div className={styles.ResultContents}>
         <div className={styles.Temperature}>
-          <div className={styles.PanelTitle}>Temperature Forecast</div>
+          <div className={styles.PanelTitle}>Today's Weather Conditions</div>
           <div className={styles.PanelValue}>
             <div>
               <img src="/images/cloud.png" alt="Weather condition" />
