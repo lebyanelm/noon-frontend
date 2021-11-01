@@ -1,0 +1,67 @@
+.WeatherResultContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center; }
+
+.WeatherResultContainer .ResultContents {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px; }
+
+.WeatherResultContainer .Temperature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px; }
+
+.WeatherResultContainer .Temperature img {
+  height: 70px;
+  margin-right: 20px; }
+
+.WeatherResultContainer .Temperature .PanelTitle {
+  font-size: 25px;
+  margin-bottom: 20px; }
+
+.WeatherResultContainer .Temperature .PanelTemperature {
+  font-weight: normal !important;
+  font-size: 50px; }
+
+.WeatherResultContainer .Temperature .PanelValue {
+  display: flex; }
+
+.WeatherResultContainer .ConditionText {
+  font-family: "Noto Sans Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-weight: bold; }
+
+.WeatherResultContainer .More {
+  width: 100%; }
+
+.WeatherResultContainer .MiniPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 20px 0;
+  background: #000000;
+  color: #ffffff;
+  width: 100%;
+  border-bottom: 1px solid #eee; }
+
+.WeatherResultContainer .MiniPanel .PanelName {
+  font-size: large;
+  font-family: "Noto Sans Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  padding-left: 20px; }
+
+.WeatherResultContainer .MiniPanel .PanelValue {
+  margin-right: 20px;
+  font-size: 50px;
+  color: #f1b104;
+  font-weight: 900; }

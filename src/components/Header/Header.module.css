@@ -1,0 +1,32 @@
+.HeaderContainer {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid #000000; }
+
+.HeaderContainer .LogoBrand {
+  display: flex;
+  align-items: center;
+  gap: 20px; }
+
+.HeaderContainer .LogoBrand img {
+  display: inline-block;
+  height: 40px;
+  border-radius: 50px; }
+
+.HeaderContainer .LogoBrand span,
+.HeaderContainer .LogoBrand span * {
+  display: inline-block;
+  font-family: "Noto Sans Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 25px;
+  color: #000000; }
+
+.HeaderContainer ul {
+  margin: 0;
+  padding: 0; }
+
+.HeaderContainer ul a {
+  display: inline-block;
+  padding: 10px;
+  font-weight: 600; }
