@@ -25,8 +25,8 @@ const Landing = () => (
           </span>
 
           <p>
-            Use Noon to discover weather changes and subscribe to our platform
-            for SMS notifications on weather updates everyday.
+            Use <b>Overast</b> to discover weather changes and subscribe to our
+            platform for SMS notifications on weather updates everyday.
           </p>
 
           <div className="buttons">

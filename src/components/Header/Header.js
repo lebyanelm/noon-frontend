@@ -7,7 +7,7 @@ const Header = () => (
       <a className={styles.LogoBrand} href="/">
         <img src="/logo192.png" alt="Logo" />
         <span>
-          <b>Noon</b>weather
+          <b>Over</b>astweather
         </span>
       </a>
 
