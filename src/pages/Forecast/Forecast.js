@@ -15,24 +15,6 @@ const Forecast = () => {
       <Header></Header>
 
       <section className="column">
-        <div style={{ maxWidth: "60%" }}>
-          <div className="subheader">Plan ahead of time</div>
-          <div className="header">
-            Find your{" "}
-            <span
-              className="header theme-color underline"
-              style={{ display: "inline-block" }}
-            >
-              area
-            </span>
-            .
-          </div>
-          <p>
-            Search the area you want to view the overcast and forecast weather
-            details.
-          </p>
-        </div>
-
         <div>
           <div className={styles.InputContainer}>
             <input
