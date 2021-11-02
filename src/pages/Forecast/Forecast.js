@@ -18,7 +18,6 @@ const Forecast = () => {
     setAreaName(suggestion.name);
     setShowSuggestions(false);
     setSelectedSuggestion(suggestion);
-    console.log(selectedSuggestion)
   }
 
   // When user types an area name give out suggestions of related places
