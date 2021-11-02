@@ -20,6 +20,24 @@ const Forecast = () => {
     setSelectedSuggestion(suggestion);
   }
 
+  // For automatically detecting the user's location using an IP Address
+  React.useEffect(() => {
+    superagent
+      .get([process.env.REACT_APP_API_ENDPOINT, "auto-location"].join(""))
+      .end((_, response) => {
+        if (response) {
+          if (response.status === 200) {
+            setAreaName(response.body.data.formatted_address);
+            setShowSuggestions(false);
+          } else {
+            console.error(response.body ? response.body.reason : "Something went wrong.");
+          }
+        } else {
+          console.error("No internet connection");
+        }
+      })
+  }, []);
+
   // When user types an area name give out suggestions of related places
   React.useEffect(() => {
     if (selectedSuggestion === null) {
@@ -28,7 +46,7 @@ const Forecast = () => {
         [
           process.env.REACT_APP_API_ENDPOINT,
           "suggestions?query=",
-          areaName.toLowerCase(),
+          areaName,
         ].join("")
       )
       .end((_, response) => {
