@@ -28,6 +28,13 @@
   background: $LIGHT_COLOR;
   padding: 40px;
   border-radius: 10px;
+  background: #EEE;
+  transition: background 300ms ease;
+}
+
+.WeatherResultContainer .Temperature:hover {
+  cursor: pointer;
+  background: #DDD;
 }
 
 .WeatherResultContainer .Temperature img {
@@ -52,6 +59,7 @@
 .WeatherResultContainer .ConditionText {
   font-family: $SUB_HEADER_FONT_FAMILY;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .WeatherResultContainer .More {
@@ -67,6 +75,16 @@
   color: $LIGHT_COLOR;
   width: 100%;
   border-bottom: 1px solid #eee;
+}
+
+.WeatherResultContainer .MiniPanel:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.WeatherResultContainer .MiniPanel:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .WeatherResultContainer .MiniPanel .PanelName {

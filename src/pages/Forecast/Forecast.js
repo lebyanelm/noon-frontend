@@ -13,13 +13,35 @@ const Forecast = () => {
   let [suggestions, setSuggestions] = React.useState([]);
   let [isShowSuggestions, setShowSuggestions] = React.useState(false);
   let [selectedSuggestion, setSelectedSuggestion] = React.useState(null);
+  let [weather, setWeather] = React.useState(null);
 
   const selectSuggestion = (suggestion) => {
     setAreaName(suggestion.name);
     setShowSuggestions(false);
     setSelectedSuggestion(suggestion);
+    detectAreaWeather(suggestion.url);
   }
 
+  // Detecting the weather of an area
+  const detectAreaWeather = (area_query) => {
+    return new Promise((resolve, reject) => {
+      superagent
+        .get([process.env.REACT_APP_API_ENDPOINT, "get_weather?query=", area_query].join(""))
+        .end((_, response) => {
+          if (response) {
+            if (response.status === 200) {
+              console.log(response);
+              setWeather(response.body.data.current);
+            } else {
+              console.error(response.body.reason || "Something went wrong.");
+            }
+          } else {
+            console.error("No internet connection.");
+          }
+        });
+    });
+  }
+  
   // For automatically detecting the user's location using an IP Address
   React.useEffect(() => {
     superagent
@@ -28,7 +50,7 @@ const Forecast = () => {
         if (response) {
           if (response.status === 200) {
             setAreaName(response.body.data.formatted_address);
-            setShowSuggestions(false);
+            detectAreaWeather([response.body.data.coordinates.latitude, response.body.data.coordinates.longitude].join(","))
           } else {
             console.error(response.body ? response.body.reason : "Something went wrong.");
           }
@@ -100,7 +122,7 @@ const Forecast = () => {
       </section>
 
       {/* The weather results */}
-      <WeatherResult areaName={areaName}></WeatherResult>
+      <WeatherResult areaName={areaName} data={weather}></WeatherResult>
 
       <Footer></Footer>
     </React.Fragment>
